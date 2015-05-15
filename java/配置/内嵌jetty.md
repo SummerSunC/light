@@ -19,7 +19,7 @@
 </dependency>
 ```
 
-``` xml
+``` 
 <!--jetty插件-->
 <build>
 	<finalName>sun-snow-web</finalName>
