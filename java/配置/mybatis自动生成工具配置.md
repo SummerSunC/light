@@ -1,5 +1,5 @@
 # generatorConfig.xml
-tags: java web mybatis
+
 ---
 ## pom.xml
 ``` xml
