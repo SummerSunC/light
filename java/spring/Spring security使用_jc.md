@@ -1,6 +1,5 @@
 # Spring security
 
-tags: spring java
 
 ---
 ## spring security 个人总结
