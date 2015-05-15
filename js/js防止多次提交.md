@@ -1,3 +1,4 @@
+# JS 中阻止多重提交
 ``` js
 var subLock = false;
 _self.subPass = function(_data){
