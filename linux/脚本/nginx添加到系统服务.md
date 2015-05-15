@@ -1,4 +1,5 @@
-nginx wiki 中文站：http://wiki.nginx.org/Chs
+## 准备
+```
 添加用户和组
 groupadd www  
 useradd -g www -M www  
@@ -14,8 +15,10 @@ tar zxvf nginx-1.0.4.tar.gz
 cd nginx-1.0.4/  
 ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module  
 make && make install  
-cd ../ 
-
+cd ../
+```
+## 脚本
+```
 #!/bin/bash  
 # nginx Startup script for the Nginx HTTP Server  
 #  
@@ -112,8 +115,11 @@ status)
 esac  
  
 exit $RETVAL 
+```
 保持文件后
+```
  [root@localhost /]# cd /etc/rc.d/init.d
 [root@localhost init.d]#  chmod +x nginx
  [root@localhost init.d]# /sbin/chkconfig --level 345 nginx on
+```
 任何位置都能运行   service nginx start           可选  start | stop | restart | reload | status |  help
