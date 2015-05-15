@@ -1,6 +1,5 @@
 # python orm框架 sqlAlchemy
 
-tags： python
 
 ---
 ## 依赖
