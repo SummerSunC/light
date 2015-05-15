@@ -3,7 +3,7 @@
 ---
 
 ## maven pom.xml
-``` xml
+``` 
 <!-- jetty -->
 <dependency>
 	<groupId>org.eclipse.jetty.aggregate</groupId>
@@ -18,6 +18,7 @@
 	<scope>test</scope>
 </dependency>
 ```
+
 ``` xml
 <!--jetty插件-->
 <build>
