@@ -1,5 +1,5 @@
 # Spring 整合 Redis
-tags: java web spring redis
+
 ---
 ## redis简介与小结
 ### Serializer
