@@ -27,7 +27,7 @@ net.ipv4.tcp_max_tw_buckets = 5000
 ```
 sysctl net.ipv4.tcp_max_tw_buckets=6000
 sysctl net.ipv4.ip_local_port_range="1024 65000"
-sysctl net.ipv4.tcp_tw_recycle =1
+sysctl net.ipv4.tcp_tw_recycle=1
 sysctl net.ipv4.tcp_tw_reuse=1
 sysctl net.ipv4.tcp_syncookies=1
 sysctl net.core.somaxconn=262144
