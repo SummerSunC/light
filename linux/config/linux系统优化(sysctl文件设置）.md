@@ -25,20 +25,20 @@ net.ipv4.tcp_max_tw_buckets = 5000
 
 ## 推荐
 ```
-sysctl net.ipv4.tcp_max_tw_buckets = 6000
+sysctl net.ipv4.tcp_max_tw_buckets=6000
 sysctl net.ipv4.ip_local_port_range="1024 65000"
-sysctl net.ipv4.tcp_tw_recycle  = 1
-sysctl net.ipv4.tcp_tw_reuse = 1
-sysctl net.ipv4.tcp_syncookies = 1
-sysctl net.core.somaxconn = 262144
-sysctl net.core.netdev_max_backlog = 262144
+sysctl net.ipv4.tcp_tw_recycle =1
+sysctl net.ipv4.tcp_tw_reuse=1
+sysctl net.ipv4.tcp_syncookies=1
+sysctl net.core.somaxconn=262144
+sysctl net.core.netdev_max_backlog=262144
 sysctl net.ipv4.tcp_max_orphans=262144
-sysctl net.ipv4.tcp_max_syn_backlog = 262144
-sysctl net.ipv4.tcp_synack_retries = 1
-sysctl net.ipv4.tcp_syn_retries = 1
-sysctl net.ipv4.tcp_fin_timeout = 1
-sysctl net.ipv4.tcp_tcp_keepalive_time = 30
-sysctl fs.file-max = 262144
+sysctl net.ipv4.tcp_max_syn_backlog=262144
+sysctl net.ipv4.tcp_synack_retries=1
+sysctl net.ipv4.tcp_syn_retries=1
+sysctl net.ipv4.tcp_fin_timeout=1
+sysctl net.ipv4.tcp_keepalive_time=30
+sysctl fs.file-max=262144
 ```
 
 - 对于Apache、Nginx等服务器，上几行的参数可以很好地减少TIME_WAIT套接字数量，但是对于Squid，效果却不大。此项参数可以控制TIME_WAIT套接字的最大数量，避免Squid服务器被大量的TIME_WAIT套接字拖死。 
