@@ -1,7 +1,8 @@
 # spring Security 自定义自动登录 
 
-
-定义自己的AuthenticationManager Bean ，可以直接继承父AuthenticationManager，只是为了在容器中能找到这个Bean
+## 小结
+- **AuthenticationManager** ： 通过他来得到Authentication管理相关信息
+- **sessionRegistry**  :sessionRegistry 可以找到服务中该用户所有的session，单用户登陆的过程就是通过 在ConcurrentSessionControlAuthenticationStrategy验证用户持有session的个数是否大于设置的最大登录session数，如果大于则将sessionInfomation的expire设置为false,而 ConcurrentSessionControlFilter会拦截每次请求，如果有sessionInfomationexpire为false则调用doLogout()方法，如果手动登录，要记得将session通过registerNewSession注册进去- **WebApplicationContext** 通过WebApplicationContext getBean获得的bean可以获取其相关依赖的Bean ,WebApplicationContext 在spring中可以通过ContextLoader获得
 
 ## 配置文件
 ``` java
