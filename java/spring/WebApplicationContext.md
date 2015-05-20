@@ -1,7 +1,7 @@
 # WebApplicationContext
 ## tips
 通过WebApplicationContext getBean获得的bean可以获取其相关依赖的Bean
-## spring中
+## spring
 在spring中可以通过ContextLoader.getCurrentWebApplicationContext获得
 
 ## filter
