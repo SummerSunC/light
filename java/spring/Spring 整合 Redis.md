@@ -2,6 +2,19 @@
 
 ---
 ## redis简介与小结
+
+### 小结
+- 在使用spring 注解时要特别注意，注解必须加载直接调用的方法上，如果使用嵌套的方式则注解会失效！！！！！
+``` java
+    
+    // 无法清除缓存
+    @Test
+	public void testPublicCleanCache() {
+		final String loginName = "13655539964";
+		userService.testPublicClean(loginName);
+	}
+```
+
 ### Serializer
 　因为redis是以key-value的形式将数据存在内存中，key就是简单的string，key似乎没有长度限制，不过原则上应该尽可能的短小且可读性强，无论是否基于持久存储，key在服务的整个生命周期中都会在内存中，因此减小key的尺寸可以有效的节约内存，同时也能优化key检索的效率。
 　　value在redis中，存储层面仍然基于string，在逻辑层面，可以是string/set/list/map，不过redis为了性能考虑，使用不同的“encoding”数据结构类型来表示它们。(例如：linkedlist，ziplist等)。
