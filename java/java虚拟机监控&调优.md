@@ -25,8 +25,7 @@
 * -verbose:jni ：
  输出native方法调用的相关情况，一般用于诊断jni调用错误信息。
 
-#### 其它
-[JVM启动参数大全](http://www.blogjava.net/midstr/archive/2008/09/21/230265.html)
+
 
 
 
