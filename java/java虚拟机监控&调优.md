@@ -1,6 +1,14 @@
 # JVM监控与调优（hotSpot）
-## java启动参数简介
+
+## 参考资料
+[参考博客](http://www.blogjava.net/midstr/archive/2008/09/21/230265.html)
+
+[JVM可视化监控工具](http://blog.csdn.net/java2000_wl/article/details/8049707)
+
 [JVM启动参数大全](http://www.blogjava.net/midstr/archive/2008/09/21/230265.html)
+
+## java启动参数简介
+
 * 标准参数(-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
 * 非标准参数(-X)，默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，且不保证向后兼容；
 * 非Stable参数 [非静态参数]（-XX），此类参数各个jvm实现会有所不同，将来可能会随时取消，需要慎重使用；
