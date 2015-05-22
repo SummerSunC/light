@@ -67,12 +67,41 @@
 #### 非Stable参数（非静态参数）
 
 对于非Stable参数，使用方法有4种：
+```
+-XX:+<option> 启用选项
+-XX:-<option> 不启用选项
+-XX:<option>=<number> 给选项设置一个数字类型值，可跟单位，例如 32k, 1024m, 2g
+-XX:<option>=<string> 给选项设置一个字符串值，例如-XX:HeapDumpPath=./dump.core
+```
+| 参数及其默认值 | 描述 |
+|--|--|
+| -XX:NewSize=2.125m|新生代对象生成时占用内存的默认值|
+|-XX:MaxNewSize=size | 新生成对象能占用内存的最大值|
+|-XX:MaxPermSize=64m|方法区所能占用的最大内存（非堆内存）|
+|……|……|
 
--XX:+<option>   启用选项
 
-- -XX:-<option> 不启用选项
-- -XX:<option>=<number> 给选项设置一个数字类型值，可跟单位，例如 32k, 1024m, 2g
-- -XX:<option>=<string> 给选项设置一个字符串值，例如-XX:HeapDumpPath=./dump.core
+| 参数及其默认值 |描述 |
+|--|--|
+|-XX:-UseSerialGC|启用串行GC，即采用Serial+Serial Old模式|
+|-XX:-UseParallelGC|启用并行GC，即采用Parallel Scavenge+Serial Old收集器组合（-Server模式下的默认组合）|
+|-XX:+UseParNewGC|使用ParNew+Serial Old收集器组合|
+|-XX:+UseParallelOldGC|使用Parallel Scavenge +Parallel Old组合收集器|
+|-XX:+UseConcMarkSweepGC|使用ParNew+CMS+Serial Old组合并发收集，优先使用ParNew+CMS，当用户线程内存不足时，采用备用方案Serial Old收集。|
+|……|……|
+
+
+| 参数及其默认值 |描述 |
+|--|--|
+|-XX:HeapDumpPath=./java_pid< pid >.hprof||
+|-XX:HeapDumpPath=./java_pid< pid >.hprof||
+|||
+|……|……|
+
+
+	
+
+
 
 
 
