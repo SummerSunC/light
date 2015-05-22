@@ -18,9 +18,9 @@
 
 #### -DpropertyName=value
 定义系统的全局属性值(e.g : -Dspring.profiles.active="dev")。
-> 如配置文件地址等，如果value有空格，可以用-Dname="space string"这样的形式来定义，
+- 如配置文件地址等，如果value有空格，可以用-Dname="space string"这样的形式来定义，
 
-> 用System.getProperty("propertyName")可以获得这些定义的属性值，在代码中也可以用System.setProperty("propertyName","value")的形式来定义属性
+- 用System.getProperty("propertyName")可以获得这些定义的属性值，在代码中也可以用System.setProperty("propertyName","value")的形式来定义属性
 
 #### -verbose 
 
@@ -35,6 +35,13 @@
 
 ### 非标准参数
 输入 java -X 命令可以查看所有的  非标准参数。注释神马的也写的很清楚
+![](http://images.cnitblog.com/blog/406312/201312/31173615-f034059f20564bdebdb71e10a3e39d09.png)
+- ps Eden 译为伊甸园，一切开始的地方
+
+#### -Xmn
+新生代内存大小的最大值.包含E区和2个S区的总和；
+- 使用方法：-Xmn65535，-Xmn1024k，-Xmn512m，-Xmn1g (-Xms,-Xmx也是种写法)
+
 
 
 
