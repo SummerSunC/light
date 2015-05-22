@@ -24,6 +24,7 @@
 		userService.testPublicClean(loginName);
 	}
 	
+	// 清除缓存成功
 	@Test
 	public void testCleanCache() {
 		final String loginName = "sunc";
