@@ -4,7 +4,7 @@
 ## redis简介与小结
 
 ### 小结
-- 在使用spring 注解时要特别注意，注解必须加载直接调用的方法上，如果使用嵌套的方式则注解会失效！！！！！
+- 在使用spring 注解时要特别注意，注解必须加在直接调用的方法上，在同一个类中不能嵌套，如果使用嵌套的方式则注解会失效！！！！！
 
 ``` java
 	@CacheEvict(value = "userCache", key = RedisKeyPrefixConstants.FXT_USER_LOGIN_NAME_PREFIX + "#loginName", beforeInvocation = true)
