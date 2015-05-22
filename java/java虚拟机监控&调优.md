@@ -65,6 +65,10 @@
 - 默认1M，一般不需要改
 
 #### 非Stable参数（非静态参数）
+JVM（Hotspot）中主要的参数可以大致分为3类
+- 性能参数（ Performance Options）：用于JVM的性能调优和内存分配控制，如初始化内存大小的设置；
+- 行为参数（Behavioral Options）：用于改变JVM的基础行为，如GC的方式和算法的选择；
+- 调试参数（Debugging Options）：用于监控、打印、输出等jvm参数，用于显示jvm更加详细的信息；
 
 对于非Stable参数，使用方法有4种：
 ```
@@ -93,9 +97,9 @@
 
 | 参数及其默认值 |描述 |
 |--|--|
-|-XX:HeapDumpPath=./java_pid< pid >.hprof||
-|-XX:HeapDumpPath=./java_pid< pid >.hprof||
-|||
+|-XX:HeapDumpPath=./java_pid< pid >.hprof|指定导出堆信息时的路径或文件名|
+|-XX:-HeapDumpOnOutOfMemoryError|当首次遭遇OOM时导出此时堆中相关信息|
+|-XX:-PrintConcurrentLocks|遇到Ctrl-Break后打印并发锁的相关信息，与jstack -l功能相同|
 |……|……|
 
 
