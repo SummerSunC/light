@@ -48,12 +48,12 @@
 - 使用方法：-Xmn65535，-Xmn1024k，-Xmn512m，-Xmn1g (-Xms,-Xmx也是种写法)
 
 #### -Xms
-初始堆的大小，堆的最小值。
+初始堆的大小，堆的最小值。 （记忆方法：Memory Small）
 - 默认值是总共的物理内存/64（且小于1G）
 - 默认情况下，当堆中可用内存小于40%(这个值可以用-XX: MinHeapFreeRatio 调整，如-X:MinHeapFreeRatio=30)时，堆内存会开始增加，一直增加到-Xmx的大小；
 
-#### -Xmx （记忆方法：Memory maX）
-堆的最大值。
+#### -Xmx 
+堆的最大值。（记忆方法：Memory maX）
 - 默认值是总共的物理内存/64（且小于1G），如果Xms和Xmx都不设置，则两者大小会相同
 - 默认情况下，当堆中可用内存大于70%（这个值可以用-XX: MaxHeapFreeRatio 调整，如-X:MaxHeapFreeRatio=60）时，堆内存会开始减少，一直减小到-Xms的大小；
 
