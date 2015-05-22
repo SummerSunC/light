@@ -1,7 +1,7 @@
 # JVM监控与调优（hotSpot）
 
 ## 参考资料
-[参考博客](http://www.blogjava.net/midstr/archive/2008/09/21/230265.html)
+[参考博客](http://www.cnblogs.com/zhguang/p/java-jvm-gc.html)
 
 [JVM可视化监控工具](http://blog.csdn.net/java2000_wl/article/details/8049707)
 
