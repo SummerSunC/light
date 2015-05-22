@@ -77,6 +77,7 @@ JVM（Hotspot）中主要的参数可以大致分为3类
 -XX:<option>=<number> 给选项设置一个数字类型值，可跟单位，例如 32k, 1024m, 2g
 -XX:<option>=<string> 给选项设置一个字符串值，例如-XX:HeapDumpPath=./dump.core
 ```
+常见性能参数
 | 参数及其默认值 | 描述 |
 |--|--|
 | -XX:NewSize=2.125m|新生代对象生成时占用内存的默认值|
@@ -84,7 +85,7 @@ JVM（Hotspot）中主要的参数可以大致分为3类
 |-XX:MaxPermSize=64m|方法区所能占用的最大内存（非堆内存）|
 |……|……|
 
-
+常见行为参数
 | 参数及其默认值 |描述 |
 |--|--|
 |-XX:-UseSerialGC|启用串行GC，即采用Serial+Serial Old模式|
@@ -94,7 +95,7 @@ JVM（Hotspot）中主要的参数可以大致分为3类
 |-XX:+UseConcMarkSweepGC|使用ParNew+CMS+Serial Old组合并发收集，优先使用ParNew+CMS，当用户线程内存不足时，采用备用方案Serial Old收集。|
 |……|……|
 
-
+常见调试参数
 | 参数及其默认值 |描述 |
 |--|--|
 |-XX:HeapDumpPath=./java_pid< pid >.hprof|指定导出堆信息时的路径或文件名|
