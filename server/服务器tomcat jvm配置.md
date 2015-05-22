@@ -5,7 +5,7 @@
 ```
 vi $CATALINA_HOME/bin/catalina.sh
 
-# 添加
+# 在文件头添加
 JAVA_OPTS='-Xms512m -Xmx1024m …………'
 ```
 
