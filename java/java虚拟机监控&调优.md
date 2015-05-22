@@ -108,7 +108,7 @@ JVM（Hotspot）中主要的参数可以大致分为3类
 ## 优化
 ### 内存分配策略建议
 - 生产中设置 -Xms = -Xmx（**最小堆内存等于最大堆内存**），以防止抖动，大小受操作系统和内存大小限制，如果是32位系统，则一般-Xms设置为1g-2g（假设有4g内存），在64位系统上，没有限制，不过**一般为机器最大内存的一半左右**；
-- **-XX:PermSize尽量比-XX:MaxPermSize小** ,-XX:MaxPermSize>= 2 * -XX:PermSize, -XX:PermSize> 64m，一般对于4G内存的机器，-XX:MaxPermSize不会超过256m；
+- **-XX:PermSize尽量比-XX:MaxPermSize小** ;-XX:MaxPermSize>= 2 * -XX:PermSize, -XX:PermSize> 64m，一般对于4G内存的机器，-XX:MaxPermSize不会超过256m；
 - 
 - -Xmn，在开发环境下，可以用-XX:NewSize和-XX:MaxNewSize来设置新生代的大小（-XX:NewSize<=-XX:MaxNewSize），在生产环境，建议只设置-Xmn，一般-Xmn的大小是-Xms的1/2左右，不要设置的过大或过小，过大导致老年代变小，频繁Full GC，过小导致minor GC频繁。如果不设置-Xmn，可以采用-XX:NewRatio=2来设置，也是一样的效果；
 
