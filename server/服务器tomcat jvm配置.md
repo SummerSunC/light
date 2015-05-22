@@ -1,4 +1,4 @@
-# 服务器tomcat jvm配置
+# 服务器tomcat配置
 
 ## linux 
 ```
