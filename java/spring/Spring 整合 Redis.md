@@ -5,12 +5,22 @@
 
 ### 小结
 - 在使用spring 注解时要特别注意，注解必须加载直接调用的方法上，如果使用嵌套的方式则注解会失效！！！！！
+
 ``` java
+	@CacheEvict(value = "userCache", key = RedisKeyPrefixConstants.FXT_USER_LOGIN_NAME_PREFIX + "#loginName", beforeInvocation = true)
+	public void cleanUserCache(String loginName) {
+		logger.debug("成功清除userCache:" + loginName);
+	}
+    
+    public void testPublicClean(String loginName) {
+		cleanUserCache(loginName);
+	}
+    
     
     // 无法清除缓存
     @Test
 	public void testPublicCleanCache() {
-		final String loginName = "13655539964";
+		final String loginName = "xxxxx";
 		userService.testPublicClean(loginName);
 	}
 ```
