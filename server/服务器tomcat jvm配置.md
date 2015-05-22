@@ -1,6 +1,7 @@
 # 服务器tomcat配置
 
 ## linux 
+### jvm参数配置
 ```
 vi $CATALINA_HOME/bin/catalina.sh
 
