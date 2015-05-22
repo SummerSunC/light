@@ -14,6 +14,17 @@
 #### -server
  设置jvm使server模式，特点是启动速度比较慢，但运行时性能和内存管理效率很高，适用于生产环境。在具有64位能力的jdk环境下将默认启用该模式，而忽略-client参数。
 
+#### -verbose 
+
+这是查询GC问题最常用的命令之一，具体参数如：
+
+* -verbose:class ：
+ 输出jvm载入类的相关信息，当jvm报告说找不到类或者类冲突时可此进行诊断。
+* -verbose:gc ：
+ 输出每次GC的相关情况，后面会有更详细的介绍。
+* -verbose:jni ：
+ 输出native方法调用的相关情况，一般用于诊断jni调用错误信息。
+
 #### 其它
 [JVM启动参数大全](http://www.blogjava.net/midstr/archive/2008/09/21/230265.html)
 
