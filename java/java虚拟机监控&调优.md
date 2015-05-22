@@ -19,7 +19,8 @@
 #### -DpropertyName=value
 定义系统的全局属性值(e.g : -Dspring.profiles.active="dev")。
 > 如配置文件地址等，如果value有空格，可以用-Dname="space string"这样的形式来定义，
-用System.getProperty("propertyName")可以获得这些定义的属性值，在代码中也可以用System.setProperty("propertyName","value")的形式来定义属性
+
+> 用System.getProperty("propertyName")可以获得这些定义的属性值，在代码中也可以用System.setProperty("propertyName","value")的形式来定义属性
 
 #### -verbose 
 
@@ -33,6 +34,7 @@
  输出native方法调用的相关情况，一般用于诊断jni调用错误信息。
 
 ### 非标准参数
+输入 java -X 命令可以查看所有的  非标准参数。注释神马的也写的很清楚
 
 
 
