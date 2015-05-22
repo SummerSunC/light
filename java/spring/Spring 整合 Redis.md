@@ -20,8 +20,14 @@
     // 无法清除缓存
     @Test
 	public void testPublicCleanCache() {
-		final String loginName = "xxxxx";
+		final String loginName = "sunc";
 		userService.testPublicClean(loginName);
+	}
+	
+	@Test
+	public void testCleanCache() {
+		final String loginName = "sunc";
+		userService.cleanUserCache(loginName);
 	}
 ```
 
