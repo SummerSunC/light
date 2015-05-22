@@ -17,7 +17,9 @@
  设置jvm使server模式，特点是启动速度比较慢，但运行时性能和内存管理效率很高，适用于生产环境。在具有64位能力的jdk环境下将默认启用该模式，而忽略-client参数。
 
 #### -DpropertyName=value
-定义系统的全局属性值，如配置文件地址等，如果value有空格，可以用-Dname="space string"这样的形式来定义，用System.getProperty("propertyName")可以获得这些定义的属性值，在代码中也可以用System.setProperty("propertyName","value")的形式来定义属性
+定义系统的全局属性值(e.g : -Dspring.profiles.active="dev")。
+> 如配置文件地址等，如果value有空格，可以用-Dname="space string"这样的形式来定义，
+用System.getProperty("propertyName")可以获得这些定义的属性值，在代码中也可以用System.setProperty("propertyName","value")的形式来定义属性
 
 #### -verbose 
 
