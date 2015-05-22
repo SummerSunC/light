@@ -34,12 +34,9 @@
  输出native方法调用的相关情况，一般用于诊断jni调用错误信息。
 
 ### 非标准参数
-- 
+
 - 输入 java -X 命令可以查看所有的  非标准参数。注释神马的也写的很清楚
 - 堆的大小=年轻代大小+年老代大小，堆的大小不包含持久代大小，如果增大了年轻代，年老代相应就会减小，官方默认的配置为年老代大小/年轻代大小=2/1左右（使用-XX:NewRatio可以设置-XX:NewRatio=5，表示年老代/年轻代=5/1）；
-建议在开发测试环境可以用Xms和Xmx分别设置最小值最大值，但是**在线上生产环境，Xms和Xmx设置的值必须一样，原因与年轻代一样——防止抖动；**
-
-
 
 ![](http://images.cnitblog.com/blog/406312/201312/31173615-f034059f20564bdebdb71e10a3e39d09.png)
 > ps Eden 译为伊甸园，一切开始的地方
@@ -55,7 +52,7 @@
 - 默认值是总共的物理内存/64（且小于1G）
 - 默认情况下，当堆中可用内存小于40%(这个值可以用-XX: MinHeapFreeRatio 调整，如-X:MinHeapFreeRatio=30)时，堆内存会开始增加，一直增加到-Xmx的大小；
 
-#### -Xmx
+#### -Xmx （记忆方法：Memory maX）
 堆的最大值。
 - 默认值是总共的物理内存/64（且小于1G），如果Xms和Xmx都不设置，则两者大小会相同
 - 默认情况下，当堆中可用内存大于70%（这个值可以用-XX: MaxHeapFreeRatio 调整，如-X:MaxHeapFreeRatio=60）时，堆内存会开始减少，一直减小到-Xms的大小；
@@ -77,15 +74,19 @@ JVM（Hotspot）中主要的参数可以大致分为3类
 -XX:<option>=<number> 给选项设置一个数字类型值，可跟单位，例如 32k, 1024m, 2g
 -XX:<option>=<string> 给选项设置一个字符串值，例如-XX:HeapDumpPath=./dump.core
 ```
-常见性能参数
+
+- 常见性能参数
+
 | 参数及其默认值 | 描述 |
 |--|--|
 | -XX:NewSize=2.125m|新生代对象生成时占用内存的默认值|
 |-XX:MaxNewSize=size | 新生成对象能占用内存的最大值|
 |-XX:MaxPermSize=64m|方法区所能占用的最大内存（非堆内存）|
+|-XX:PermSize=64m|方法区分配的初始内存|
 |……|……|
 
-常见行为参数
+- 常见行为参数
+
 | 参数及其默认值 |描述 |
 |--|--|
 |-XX:-UseSerialGC|启用串行GC，即采用Serial+Serial Old模式|
@@ -95,13 +96,20 @@ JVM（Hotspot）中主要的参数可以大致分为3类
 |-XX:+UseConcMarkSweepGC|使用ParNew+CMS+Serial Old组合并发收集，优先使用ParNew+CMS，当用户线程内存不足时，采用备用方案Serial Old收集。|
 |……|……|
 
-常见调试参数
+- 常见调试参数
+
 | 参数及其默认值 |描述 |
 |--|--|
 |-XX:HeapDumpPath=./java_pid< pid >.hprof|指定导出堆信息时的路径或文件名|
 |-XX:-HeapDumpOnOutOfMemoryError|当首次遭遇OOM时导出此时堆中相关信息|
 |-XX:-PrintConcurrentLocks|遇到Ctrl-Break后打印并发锁的相关信息，与jstack -l功能相同|
 |……|……|
+
+## 优化
+### 内存分配策略建议
+- 生产中设置 -Xms = -Xmx（**最小堆内存等于最大堆内存**），以防止抖动，大小受操作系统和内存大小限制，如果是32位系统，则一般-Xms设置为1g-2g（假设有4g内存），在64位系统上，没有限制，不过**一般为机器最大内存的一半左右**；
+- **-XX:PermSize尽量比-XX:MaxPermSize**小，-XX:MaxPermSize>= 2 * -XX:PermSize, -XX:PermSize> 64m，一般对于4G内存的机器，-XX:MaxPermSize不会超过256m；
+- 
 
 
 	
