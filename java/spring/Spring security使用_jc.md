@@ -6,6 +6,7 @@
 - spring security 登录成功/失败都是通过handler来完成具体操作的，handler依赖filter来拦截请求。用户自定的handler在每个filter中执行的顺序是最后一个。自定义filter 可以通过addFilterAfter/before来指定顺序
 - spring security 的核心是**AuthenticationManager** ，但是**AuthenticationManager** 只是一个接口，我们依赖于具体实现，默认实现spring security 的是 **ProviderManager** ，**ProviderManager**包含了一个**AuthenticationProvider**列表，这里只要有一个AuthenticationProvider **不通过则验证通过**，所以我们在自定义鉴权的时候只要实现**AbstractUserDetailsAuthenticationProvider**验证就好了，spring security默认的使用**DaoAuthenticationProvider** 这里所有的鉴权都是通过spring security **UserDetails**对象实现的。
 - 我们通过 UserDetailsService loadUserByUsername 加载对象和分配权限
+- spring security 的maxmumsessions 是通过是存储在SessionRegistry的sessionInformation中的，而SessionRegistry是存储在内存中的，所以spring security 的sessionmunmax 只适用于单机，集群的话会有无法保证唯一登录的问题，解决这个问题可以通过redis,手动清除session
 ### 槽点
 > 刚开始我是这样写的
 > ``` java
