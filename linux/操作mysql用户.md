@@ -35,7 +35,10 @@ flush privileges;
 ```
 grant select,delete,update,create,drop on *.* to test@"%" identified by "1234";
 ```
-
+### 回收用户权限
+```
+revoke all on fxt.* from www@"%";
+```
 ## 删除用户
 ``` sql
 Delete FROM user Where User='test' and Host='localhost';
