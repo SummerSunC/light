@@ -49,3 +49,5 @@ drop database testDB; #删除用户的数据库
 drop user 用户名@'%';
 drop user 用户名@ localhost; 
 ```
+## 授权权限
+如果加上WITH GRANT OPTION 则用户就可以给其他用户赋权
