@@ -51,3 +51,6 @@ drop user 用户名@ localhost;
 ```
 ## 授权权限
 如果加上WITH GRANT OPTION 则用户就可以给其他用户赋权
+```
+grant all privileges on *.* to www@"%" identified by "password" WITH GRANT OPTION;
+```
