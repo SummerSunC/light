@@ -12,7 +12,7 @@
 ### 注意事项
 设置远程用户对单个指定数据库的访问权限，如果用[user]@'%'，则事实上远程用户只有可数据库的基本访问权限[select,update,insert,delete]而没有[drop,alter等权限].
 
-如果想使远程用户拥有这些表操作权限则必须指定远程地址 如[user]@"192.168.135.1"或将权限应用到所有database中 \*.*
+如果想使远程用户拥有这些表操作权限则必须指定远程地址 如[user]@"192.168.135.1"或将权限应用到所有database中
 ```
  # 可以访问
  GRANT ALL PRIVILEGES ON *.* TO 'www'@'%' IDENTIFIED BY PASSWORD '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19' |
