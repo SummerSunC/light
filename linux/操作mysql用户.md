@@ -13,7 +13,7 @@
 设置远程用户对单个指定数据库的访问权限，如果用[user]@'%'，则事实上远程用户只有可数据库的基本访问权限[select,update,insert,delete]而没有[drop,alter等权限].
 
 如果想使远程用户拥有这些表操作权限则必须指定远程地址 如[user]@"192.168.135.1"或将权限应用到所有database中
-```
+```shell
 #有表操作权限（权限适用范围为*.*）
 mysql> show grants for www@"%";
 +-------------------------------------------------------------------------------------------------------------+
@@ -85,7 +85,7 @@ flush privileges;
 ```
 ### 授权用户拥有所有数据库的某些权限
 ```
-grant select,delete,update,create,drop on *.* to test@"%" identified by "1234";
+grant select,delete,update on *.* to test@"%" identified by "1234";
 ```
 ### 回收用户权限
 ```
