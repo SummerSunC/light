@@ -1,5 +1,10 @@
 # mysql用户操作
 ---
+## 参考资料
+[The MySQL Access Privilege System](http://dev.mysql.com/doc/mysql-security-excerpt/5.6/en/privilege-system.html)
+
+[Account Management Statements](http://dev.mysql.com/doc/refman/5.6/en/account-management-sql.html)
+
 ## 查找用户
 使用root用户登录mysql
 ``` sql
