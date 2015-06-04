@@ -1,4 +1,9 @@
 # 各种链接
+## 博客/社区
+[阮一峰博客](http://www.ruanyifeng.com/blog/)
+## 规范
+## 文章
+
 
 [阿里巴巴分布式同步系统](http://github.com/alibaba/otter)
 
@@ -8,4 +13,5 @@
 
 [IBM github](http://ibm.github.io/)
 
-[阮一峰博客](http://www.ruanyifeng.com/blog/)
+
+
