@@ -1,5 +1,8 @@
 # window && ubuntu双系统
 
+##参考
+[使用EasyBCD安装Win7和Ubuntu双系统](http://blog.sina.com.cn/s/blog_63c993300101fnzu.html)
+
 ## 准备
 - 默认在windows环境下
 - 安装easyBCD
