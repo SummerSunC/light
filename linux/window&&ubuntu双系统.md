@@ -28,6 +28,7 @@ sudo umount -l /isodevice
 ## 设置引导
 进入windows
 打开easyBCD 删除NeoGrub引导，新建一个linux/BSD引导
+重启
 
 ## 收尾
 删除不需要的文件
