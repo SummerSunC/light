@@ -22,6 +22,8 @@
 ### 系统启动工具
 [EasyBCD](http://neosmart.net/EasyBCD/)
 
+[使用EasyBCD安装双系统](http://jingyan.baidu.com/article/e4d08ffdace06e0fd2f60d39.html)
+
 
 
 
