@@ -19,6 +19,10 @@ nexus start
 访问 ：http://localhost:8081/nexus/#welcome
 
 ## 配置
+### 服务配置
+```
+/opt/nexus/nexus-2.11.1-01/conf/nexus.properties
+```
 ### 用户名密码
 默认 ：u:admin p:admin123
 ```
