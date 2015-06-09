@@ -37,3 +37,8 @@ nexus start
 - proxy ：代理仓库，它们被用来代理远程的公共仓库，如maven中央仓库。
 - group ： 仓库组，用来合并多个hosted/proxy仓库，通常我们配置maven依赖仓库组。
 - virtual
+
+### 配置
+点击Central，并切换到Configuration选项卡
+
+将Download Remote Indexes项设为True！这将打开nexus的下载远程索引的功能，便于使用nexus的搜索功能。
