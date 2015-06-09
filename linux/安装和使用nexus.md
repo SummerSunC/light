@@ -42,3 +42,53 @@ nexus start
 点击Central，并切换到Configuration选项卡
 
 将Download Remote Indexes项设为True！这将打开nexus的下载远程索引的功能，便于使用nexus的搜索功能。
+
+### 客户端mvn setting文件配置
+``` xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>D:\Program Files\apache-maven-3.2.3\repo</localRepository>
+	<mirrors>
+        <mirror>
+            <id>osc</id>
+            <mirrorOf>central</mirrorOf>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+        </mirror>
+    </mirrors>
+    <profiles>
+        <profile>
+            <id>nexus</id>
+            <!--Enable snapshots for the built in central repo to direct -->
+            <!--all requests to nexus via the mirror -->
+            <repositories>
+                <repository>
+                    <id>nexus-releases</id>
+                    <url>http://nexus.vkelai.com:8081/nexus/content/repositories/releases/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>nexus-snapshots</id>
+                    <url>http://nexus.vkelai.com:8081/nexus/content/repositories/snapshots/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
+    <proxies></proxies>
+    <pluginGroups></pluginGroups>
+</settings>
+
+```
