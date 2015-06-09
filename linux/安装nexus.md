@@ -16,3 +16,4 @@ source /etc/profile
 ```
 nexus start
 ```
+访问 ：localhost:8081
