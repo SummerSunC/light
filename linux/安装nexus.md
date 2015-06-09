@@ -20,6 +20,7 @@ nexus start
 
 ## 配置
 ### 用户名密码
+默认 ：u:admin p:admin123
 ```
 /opt/nexus/sonatype-work/nexus/conf/security.xml
 ```
