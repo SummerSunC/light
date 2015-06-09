@@ -1,4 +1,4 @@
-# 安装maven私服 Nexus
+# 安装和使用maven私服 Nexus
 
 ## 准备
 [下载地址](http://www.sonatype.org/nexus/go/)
@@ -28,3 +28,5 @@ nexus start
 ```
 /opt/nexus/sonatype-work/nexus/conf/security.xml
 ```
+
+## 使用
