@@ -12,3 +12,7 @@ sudo vi /etc/profile
 > export PATH=/opt/nexus/nexus-2.11.1-01/bin:$PATH
 source /etc/profile
 ```
+## 启动
+```
+nexus start
+```
