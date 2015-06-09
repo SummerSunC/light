@@ -17,3 +17,9 @@ source /etc/profile
 nexus start
 ```
 访问 ：http://localhost:8081/nexus/#welcome
+
+## 配置
+### 用户名密码
+```
+/opt/nexus/sonatype-work/nexus/conf/security.xml
+```
