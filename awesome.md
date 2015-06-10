@@ -20,6 +20,8 @@
 
 ## 工具
 ### 虚拟机
+vmware 11 序列号：1F04Z-6D111-7Z029-AV0Q4-3AEH8
+
 [docker官网](https://www.docker.com/)
 
 [docker入门实战](http://yuedu.baidu.com/ebook/d817967416fc700abb68fca1)
