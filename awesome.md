@@ -6,6 +6,8 @@
 
 [妹子UI](http://amazeui.org/getting-started)
 
+[bower](http://bower.io/)
+
 ## 规范
 [restful设计规范](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
 
