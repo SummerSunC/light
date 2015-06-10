@@ -19,4 +19,4 @@ jenkins 实际上是在内部嵌入了jetty容器，通过jar 的方式直接发
 
 配置放在/etc/sysconfig/jenkins下
 
-启动脚本放在/etc/init.d/jenkins
+启动脚本为/etc/init.d/jenkins
