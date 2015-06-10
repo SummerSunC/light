@@ -6,3 +6,4 @@
 
 [官方安装教程](https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins)
 
+[官方启动安装教程](https://wiki.jenkins-ci.org/display/JENKINS/Starting+and+Accessing+Jenkins)
