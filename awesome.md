@@ -1,6 +1,8 @@
 ## 博客/社区
 [阮一峰博客](http://www.ruanyifeng.com/blog/)
 
+[廖雪峰博客](http://www.liaoxuefeng.com)
+
 [妹子UI](http://amazeui.org/getting-started)
 
 [bower](http://bower.io/)
