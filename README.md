@@ -1,2 +1,2 @@
 # light
-Some note or ideal
+技术分享与笔记
