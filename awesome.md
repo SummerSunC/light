@@ -13,11 +13,15 @@
 
 [alibaba github](https://github.com/alibaba)
 
+[yum 官网](http://yum.baseurl.org/)
+
 ## 规范
 [restful设计规范](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
 
-## 文章
+## 教程
 [maven pom.xml详解](http://www.blogjava.net/jianyue/articles/227932.html)
+
+[yum 安装](http://blog.csdn.net/tianlesoftware/article/details/5381522)
 
 ## 资源
 [阿里巴巴分布式同步系统](http://github.com/alibaba/otter)
