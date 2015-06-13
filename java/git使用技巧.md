@@ -18,6 +18,6 @@ git filter-branch --tree-filter 'rm -rf *' HEAD
 ```
 ## You have unstaged changes
 ```
-# 解决
+# 解决 (Add file contents to the staging area)
 git staged
 ```
