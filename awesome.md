@@ -30,6 +30,8 @@
 
 [大众点评日志监控系统](https://github.com/dianping/cat)
 
+[将web资源继承jar](http://www.webjars.org/)
+
 ## 工具
 ### 虚拟机
 vmware 11 序列号：1F04Z-6D111-7Z029-AV0Q4-3AEH8
