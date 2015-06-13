@@ -12,3 +12,4 @@
 - git中文件三种状态：已提交（committed），已修改（modified）和已暂存（staged）
 > ![](http://www.git-scm.com/figures/18333fig0106-tn.png)
 
+## git 删除仓库历史记录 ！核弹
