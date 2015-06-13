@@ -16,3 +16,8 @@
 ```
 git filter-branch --tree-filter 'rm -rf *' HEAD
 ```
+## You have unstaged changes
+```
+# 解决
+git staged
+```
