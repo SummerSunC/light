@@ -8,6 +8,10 @@ sudo的执行顺序是先到/etc/sudoers 中查找用户是否有权限执行sud
 ```
 ## 注册服务chkconfig
 ```
+# 注册服务
 sudo chkconfig --add /etc/init.d/nexus
+# 开机启动
+sudo chkconfig nexus on
+
 sudo service nexus start
 ```
