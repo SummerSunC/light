@@ -57,16 +57,6 @@ mysql> show grants for www@"%";
 ``` sql
 select host，user from mysql.user 
 ```
-## 创建用户
-``` sql
-insert into mysql.user(Host,User,Password) values("localhost","dev",password("1234"));
-```
--  **此处的"localhost"，是指该用户只能在本地登录，不能在另外一台机器上远程登录。如果想远程登录的话，将"localhost"改为"%"，表示在任何一台电脑上都可以登录。也可以指定某台机器可以远程登录。**
-
-## 更新用户
-``` sql
-update mysql.user set password = password("password") where user = 'www'
-```
 
 ## 分配权限
 ``` sql
