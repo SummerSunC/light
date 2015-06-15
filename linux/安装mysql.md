@@ -4,7 +4,7 @@
 ---
 
 #安装依赖
-``
+```
 yum groupinstall -y "Development Tools"
 yum install -y cmake openssl-devel zlib-devel ncurses*
 ```
