@@ -9,6 +9,7 @@
  * 
  
 ## Banner
+**banner是启动容器时的输入文字**
 可以在classpath目录下增加banner.txt编辑内容作为自己的banner,
 也可以使用如下配置去掉banner
 ```
