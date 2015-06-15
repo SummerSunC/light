@@ -20,12 +20,11 @@ useradd -g www -s /sbin/nologin -m www
 
 ### 下载所需包
 
-- yajl(json解析器) : wget -O yajl.tar.gz 
-- https://codeload.github.com/lloyd/yajl/legacy.tar.gz/2.0.1
+- yajl(json解析器) : wget -O yajl.tar.gz https://codeload.github.com/lloyd/yajl/legacy.tar.gz/2.0.1
 - nginx : wget http://nginx.org/download/nginx-1.4.5.tar.gz
 - nginx-tfs : git clone https://github.com/alibaba/nginx-tfs.git
 - pcre(c语言正则解析器) :wget  ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.34.tar.gz 
----
+
 
 ## 解压：
 
