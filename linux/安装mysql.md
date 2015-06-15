@@ -4,27 +4,32 @@
 ---
 
 #安装依赖
+``
 yum groupinstall -y "Development Tools"
 yum install -y cmake openssl-devel zlib-devel ncurses*
-
+```
 #下载源码
+```
 cd /tmp
 wget -O mysql-5.6.21.tar.gz http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.21.tar.gz/from/http://cdn.mysql.com/
-
+```
 #添加用户组
+```
 groupadd mysql
 useradd -g mysql mysql -s /sbin/nologin
 mkdir /data/mysql
 mkdir /usr/local/mysql
-
+```
 #编译
+```
 tar -zxvf  mysql-5.6.21.tar.gz
 cd mysql-5.6.21
 cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/data/mysql -DSYSCONFDIR=/etc -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DMYSQL_USER=mysql
 make && make install
-
+```
 #初始化
-#cp /usr/local/mysql/support-files/my-large.cnf /etc/my.cnf
+```
+cp /usr/local/mysql/support-files/my-large.cnf /etc/my.cnf
 cp -p /usr/local/mysql/support-files/mysql.server /etc/rc.d/init.d/mysqld
 chmod +x /etc/rc.d/init.d/mysqld
 chkconfig --level 2345 mysqld on
@@ -46,8 +51,9 @@ echo 'export PATH=/usr/local/mysql/bin:$PATH' > /etc/profile.d/mysql.sh && . /et
 
 ./scripts/mysql_install_db --user=mysql --datadir=/data/mysql &
 service mysqld start
-
+```
 #通过客户端访问并修改密码
+```
 mysql
 mysql> select user,host,password from user;
 +------+--------------+----------+
@@ -92,6 +98,6 @@ mysql> select user,host,password from user;
 +------+-----------+-------------------------------------------+
 3 rows in set (0.00 sec)
 
-
+```
 
 
