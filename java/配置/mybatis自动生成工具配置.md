@@ -31,13 +31,13 @@
 			connectionURL="jdbc:mysql://host:port/dbname" userId="username"
 			password="password" />
 		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.vcooline.fxt.common.model"
+		<javaModelGenerator targetPackage="com.sunc.fxt.common.model"
 			targetProject="testMyBatisGenerator" />
 		<!-- 生成映射文件的包名和位置 -->
-		<sqlMapGenerator targetPackage="com.vcooline.wsite.dao.impl"
+		<sqlMapGenerator targetPackage="com.sunc.wsite.dao.impl"
 			targetProject="testMyBatisGenerator" />
 		<!-- 生成DAO的包名和位置 -->
-		<javaClientGenerator targetPackage="com.vcooline.fxt.common.mapper"
+		<javaClientGenerator targetPackage="com.sunc.fxt.common.mapper"
 			targetProject="testMyBatisGenerator" type="XMLMAPPER" />
 
 		<!-- 要生成哪些表 -->
