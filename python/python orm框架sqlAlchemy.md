@@ -64,7 +64,7 @@ class Account(Base):
 
 # 初始化数据库链接
 # '数据库类型+数据库驱动名称://用户名:口令@机器地址:端口号/数据库名'
-engine = create_engine("mysql://vcooline:vc00line@115.28.77.100:4407/fxt")
+engine = create_engine("mysql://username:password@host:port/dbname")
 #创建DBSession类型
 DBSession = sessionmaker(bind=engine)
 
