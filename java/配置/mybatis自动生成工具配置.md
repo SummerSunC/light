@@ -28,8 +28,8 @@
 
 		<!--数据库链接URL，用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://115.28.77.100:4407/fxt" userId="vcooline"
-			password="123456" />
+			connectionURL="jdbc:mysql://host:port/dbname" userId="username"
+			password="password" />
 		<!-- 生成模型的包名和位置 -->
 		<javaModelGenerator targetPackage="com.vcooline.fxt.common.model"
 			targetProject="testMyBatisGenerator" />
