@@ -1,7 +1,6 @@
 # Popeye API
 
-tags:vcooline api doc
-
+## API 说明
 ---
 - API说明 - 所有API采用http方式，请求地址以http://{项目地址}/api开头(后面以{apiPath}代替)。
 - 所有请求必须带上名为x-auth-token的header作为签名，以验证请求合法性。
