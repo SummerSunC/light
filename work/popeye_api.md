@@ -182,17 +182,21 @@ userId:用户id
   "code": "200", 
   "msg": "成功", 
   "result": {
-    [{id:用户id,
-    schoolId:学校id,
-    username:登录名称,
-    nickName:昵称,
-    phone:手机号,
-    headUrl:头像,
-    goldenCoin:金币数量,
-    silverCoin:银币数量,
-    copperCoin:铜币数量，
-    totalUseTime:累计使用时间,
-    rank_today:今日排名
+    [
+    {
+    id:奖券id,
+    name:名称,
+    type:兑换券类型 0：优惠券，1：代金券，2：折扣券,
+    pic:图片url,
+    total_num:发放总数,
+    shop_names:投放门店名,
+    goldenCoin:所需金币数量,
+    silverCoin:所需银币数量,
+    copperCoin:所需铜币数量，
+    eventCloseAt:活动截止日期
+    conversionCloseAt:兑换截止日期,
+    instruction:说明,
+    depict:描述
     },
     {……}……
     ]
@@ -200,6 +204,76 @@ userId:用户id
 }
 ```
 
+### 获得兑换券详细信息
+```
+url:{apiPath}/ticket
+method:GET
+```
+参数：
+```
+ticketId:奖券id
+```
+成功:
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": {
+    [
+    {
+    id:奖券id,
+    name:名称,
+    type:兑换券类型 0：优惠券，1：代金券，2：折扣券,
+    pic:图片url,
+    total_num:发放总数,
+    shop_names:投放门店名,
+    goldenCoin:所需金币数量,
+    silverCoin:所需银币数量,
+    copperCoin:所需铜币数量，
+    eventCloseAt:活动截止日期
+    conversionCloseAt:兑换截止日期,
+    instruction:说明,
+    depict:描述,
+    finishUserCount:成功兑换用户总数
+    },
+    {……}……
+    ]
+  }
+}
+```
+
+### 获得历史记录
+```
+url:{apiPath}/history
+method:GET
+```
+参数：
+```
+userId:用户id
+```
+成功:
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": {
+    [
+    {
+    id:记录id,
+    goldenCoin:金币数量,
+    silverCoin:银币数量,
+    copperCoin:铜币数量，
+    finish_time:完成任务的分钟数
+    create_at:完成的时间 （yyyy-MM-dd HH:mm:ss）
+    remark:备注
+    },
+    {……}……
+    ]
+  }
+}
+```
 
 对于用户开始任务后24小时仍未回调接口的，视为任务失败，将返还广告金额，如果此时再回调接口，将不做任何处理，并返回失败，code为451
 返回格式：
