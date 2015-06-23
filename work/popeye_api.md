@@ -1,5 +1,4 @@
 # Popeye API
-
 ## API 说明
 ---
 - API说明 - 所有API采用http方式，请求地址以http://{项目地址}/v1开头(后面以{apiPath}代替)。
@@ -80,7 +79,127 @@ method:POST
 username:用户手机号
 password:加密后密码
 ```
-如果用户已经注册则返回失败，
+如果用户已经注册则返回失败，code为451
+
+成功返回：
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": {userId}
+}
+```
+### 更多账户信息
+```
+url:{apiPath}/info
+method:POST
+```
+参数:
+```
+userId:用户id
+headUrl: #这里是用流的方式还是先存到七牛直接返回给我url，在讨论
+nickName: 昵称
+username:手机号码
+school:schoolId
+```
+失败返回code为451，成功返回code为200
+
+### 获得school列表（注册更多这个页面应该需要选择省市好定位学校）
+```
+url:{apiPath}/schools
+method:GET
+```
+参数 （不传参数返回所有）
+```
+province(可选):省id
+city（可选）:市id
+```
+成功：
+```
+{
+    "success": true,
+    "code": "200",
+    "msg": null,
+    "result": {
+        id:学校id,
+        name:学校名称
+        pic:学校图片url
+        cityId:城市id
+        dictName:区/乡/镇名
+        cityName:市/县名
+        provName:省/市名
+    }
+}
+```
+### 登录
+```
+url:{apiPath}/login
+method:POST
+```
+
+参数：
+```
+username:用户手机号
+password:加密后密码
+```
+如果用户不存在则返回失败，code为451
+
+成功返回：
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": {
+    id:用户id,
+    schoolId:学校id,
+    username:登录名称,
+    nickName:昵称,
+    phone:手机号,
+    headUrl:头像,
+    goldenCoin:金币数量,
+    silverCoin:银币数量,
+    copperCoin:铜币数量，
+    totalUseTime:累计使用时间,
+    rank_today:今日排名
+  }
+}
+```
+### 获得兑换券列表
+```
+url:{apiPath}/tickets
+method:GET
+```
+参数：
+```
+userId:用户id
+```
+成功:
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": {
+    [{id:用户id,
+    schoolId:学校id,
+    username:登录名称,
+    nickName:昵称,
+    phone:手机号,
+    headUrl:头像,
+    goldenCoin:金币数量,
+    silverCoin:银币数量,
+    copperCoin:铜币数量，
+    totalUseTime:累计使用时间,
+    rank_today:今日排名
+    },
+    {……}……
+    ]
+  }
+}
+```
+
 
 对于用户开始任务后24小时仍未回调接口的，视为任务失败，将返还广告金额，如果此时再回调接口，将不做任何处理，并返回失败，code为451
 返回格式：
