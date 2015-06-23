@@ -53,6 +53,14 @@ digest = DigestUtils.md5Hex(new String(digestArray));
 
 ## API
 ### 获取验证码
+```
+url:{apiPath}/verifycode/{phone}
+method:GET
+```
+如果手机验证失败或已经注册返回失败，code为451
+
+
+
 ### 注册
 ```
 url:{apiPath}/register
