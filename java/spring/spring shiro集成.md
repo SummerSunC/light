@@ -1,4 +1,42 @@
 # spring shiro集成
+## spring boot 继承注意点
+要在webconfig 中注册一个shiroFilter且需要放在第一个
+
+WebConfig.java
+``` java
+……
+@Bean
+public FilterRegistrationBean shiroFilter() {
+	FilterRegistrationBean reg = new FilterRegistrationBean();
+	reg.setFilter(new DelegatingFilterProxy(BeanNameConstants.SHIRO_FILTER_BEAN));
+	reg.addUrlPatterns("/*");
+	reg.setDispatcherTypes(DispatcherType.FORWARD, DispatcherType.INCLUDE, DispatcherType.REQUEST);
+	return reg;
+}
+……
+```
+
+shiroSecurityConfig.java
+``` java
+……
+@Bean(name = BeanNameConstants.SHIRO_FILTER_BEAN)
+public ShiroFilterFactoryBean shiroFilterBean() {
+	ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
+	Map<String, String> filterChainDefinitionMapping = new HashMap<String, String>();
+
+	// filterChainDefinitionMapping.put("/*", "authc");
+	filterChainDefinitionMapping.put("/admin/*", "authc");
+	filterChainDefinitionMapping.put("/logout", "logout");
+
+	shiroFilter.setLoginUrl("/login");
+	shiroFilter.setSuccessUrl("/index");
+	shiroFilter.setFilterChainDefinitionMap(filterChainDefinitionMapping);
+
+	shiroFilter.setSecurityManager(securityManager());
+	return shiroFilter;
+}
+……
+```
 
 ## pom.xml
 ``` xml
