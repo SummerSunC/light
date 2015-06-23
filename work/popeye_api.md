@@ -1,4 +1,4 @@
-# 放心提微信加粉任务API
+# popeye API
 
 tags:vcooline api doc
 
@@ -50,6 +50,8 @@ digest = DigestUtils.md5Hex(new String(digestArray));
     "result": null 
 } 
 ```
+
+
 完成任务回调
 ```
 url:{apiPath}/task/wx/finish
