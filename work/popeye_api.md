@@ -2,7 +2,7 @@
 
 ## API 说明
 ---
-- API说明 - 所有API采用http方式，请求地址以http://{项目地址}/api开头(后面以{apiPath}代替)。
+- API说明 - 所有API采用http方式，请求地址以http://{项目地址}/v1开头(后面以{apiPath}代替)。
 - 所有请求必须带上名为x-auth-token的header作为签名，以验证请求合法性。
 - 所有请求返回数据均为json格式数据。
 - 所有URL路径，参数名均区分大小写 - 编码均为UTF-8。
@@ -16,6 +16,7 @@
     "result": { //data } 
 } 
 ```
+
 ## 鉴权说明 
 - 首先通过申请获取appId,appKey,token
 - 根据appKey,token,timestamp(当前系统时间戳转成毫秒数)生成签名，即sign
@@ -50,12 +51,14 @@ digest = DigestUtils.md5Hex(new String(digestArray));
 } 
 ```
 
+## API
 
-完成任务回调
+### 注册
 ```
-url:{apiPath}/task/wx/finish
-method:GET,POST
+url:{apiPath}/register
+method:POST
 ```
+
 参数：
 
 >  **taskId**(任务ID，必填,可从广告跳转url中名为_taskId的参数中获取)，
