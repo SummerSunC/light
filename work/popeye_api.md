@@ -52,7 +52,7 @@ digest = DigestUtils.md5Hex(new String(digestArray));
 ```
 
 ## API
-
+### 获取验证码
 ### 注册
 ```
 url:{apiPath}/register
