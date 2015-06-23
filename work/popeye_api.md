@@ -4,7 +4,6 @@ tags:vcooline api doc
 
 ---
 - API说明 - 所有API采用http方式，请求地址以http://{项目地址}/api开头(后面以{apiPath}代替)。
-- 测试地址以http://fxt.api.vkelai.com/api开头(后面以{apiPath}代替)。
 - 所有请求必须带上名为x-auth-token的header作为签名，以验证请求合法性。
 - 所有请求返回数据均为json格式数据。
 - 所有URL路径，参数名均区分大小写 - 编码均为UTF-8。
@@ -57,7 +56,8 @@ url:{apiPath}/task/wx/finish
 method:GET,POST
 ```
 参数：
-> **taskId**(任务ID，必填,可从广告跳转url中名为_taskId的参数中获取)，
+
+>  **taskId**(任务ID，必填,可从广告跳转url中名为_taskId的参数中获取)，
 > wxOpenId (微信的用户open_id)
 > wxUserName(微信用户昵称)
 > result(任务结果，完成：2，审核中：3，失败：4，不传或传其他数字则默认为2)
