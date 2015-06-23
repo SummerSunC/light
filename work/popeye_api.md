@@ -1,5 +1,6 @@
 # Popeye API
 ## API 说明
+**此api为第一版v1，后续会改成oauth2方式**
 ---
 - API说明 - 所有API采用http方式，请求地址以http://{项目地址}/v1开头(后面以{apiPath}代替)。
 - 所有请求必须带上名为x-auth-token的header作为签名，以验证请求合法性。
@@ -76,8 +77,20 @@ method:POST
 
 参数：
 ```
-username:用户手机号
-password:加密后密码
+token:用户令牌（根据用户名密码加密过后的字符串）
+
+// 加密方法如下(以java代码为例)
+String key = 这里为appid
+String input = 待加密字符串（格式为：u:{username},p:{password}  ）
+String result = null;
+Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+cipher.init(Cipher.ENCRYPT_MODE, getCryptKey(key));  
+
+byte[] inputBytes = input.getBytes("UTF-8");
+byte[] outputBytes = cipher.doFinal(inputBytes);
+
+BASE64Encoder encoder = new BASE64Encoder();
+result = encoder.encode(outputBytes);
 ```
 如果用户已经注册则返回失败，code为451
 
@@ -140,8 +153,7 @@ method:POST
 
 参数：
 ```
-username:用户手机号
-password:加密后密码
+token:用户令牌（根据用户名密码加密过后的字符串）//加密方式见注册
 ```
 如果用户不存在则返回失败，code为451
 
