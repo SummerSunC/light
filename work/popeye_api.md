@@ -53,7 +53,7 @@ digest = DigestUtils.md5Hex(new String(digestArray));
 ### 获取验证码
 ```
 url:{apiPath}/code/{phone}
-method:GET
+method:GET,POST
 ```
 如果手机验证失败或已经注册返回失败，code为451
 
@@ -119,7 +119,7 @@ school:schoolId
 ### 获得school列表（注册更多这个页面应该需要选择省市好定位学校）
 ```
 url:{apiPath}/schools
-method:GET
+method:GET,POST
 ```
 参数 （不传参数返回所有）
 ```
@@ -179,7 +179,7 @@ token:用户令牌（根据用户名密码加密过后的字符串）//加密方
 ### 获得兑换券列表
 ```
 url:{apiPath}/tickets
-method:GET
+method:GET,POST
 ```
 参数：
 ```
@@ -217,7 +217,7 @@ userId:用户id
 ### 获得兑换券详细信息
 ```
 url:{apiPath}/ticket
-method:GET
+method:GET,POST
 ```
 参数：
 ```
@@ -256,7 +256,7 @@ ticketId:奖券id
 ### 获得历史记录
 ```
 url:{apiPath}/history
-method:GET
+method:GET,POST
 ```
 参数：
 ```
