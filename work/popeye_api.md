@@ -108,8 +108,8 @@ method:POST
 ```
 参数:
 ```
-userId:用户id
-headUrl: #这里是用流的方式还是先存到七牛直接返回给我url，在讨论
+id:用户id  // 这里改为id 
+headPic: #这里是用流的方式还是先存到七牛直接返回给我url，在讨论,这里改为headPic
 nickName: 昵称
 username:手机号码
 school:schoolId
@@ -172,7 +172,7 @@ token:用户令牌（根据用户名密码加密过后的字符串）//加密方
     silverCoin:银币数量,
     copperCoin:铜币数量，
     totalUseTime:累计使用时间,
-    rank_today:今日排名
+    rankToday:今日排名 这里改为rankToday
   }
 }
 ```
@@ -198,8 +198,8 @@ userId:用户id
     name:名称,
     type:兑换券类型 0：优惠券，1：代金券，2：折扣券,
     pic:图片url,
-    total_num:发放总数,
-    shop_names:投放门店名,
+    totalNum:发放总数, //这里改为totalNum
+    shopNames:投放门店名, //这里改为shopNames
     goldenCoin:所需金币数量,
     silverCoin:所需银币数量,
     copperCoin:所需铜币数量，
@@ -236,8 +236,8 @@ ticketId:奖券id
     name:名称,
     type:兑换券类型 0：优惠券，1：代金券，2：折扣券,
     pic:图片url,
-    total_num:发放总数,
-    shop_names:投放门店名,
+    totalNum:发放总数,
+    shopNames:投放门店名,
     goldenCoin:所需金币数量,
     silverCoin:所需银币数量,
     copperCoin:所需铜币数量，
@@ -275,8 +275,8 @@ userId:用户id
     goldenCoin:金币数量,
     silverCoin:银币数量,
     copperCoin:铜币数量，
-    finish_time:完成任务的分钟数
-    create_at:完成的时间 （yyyy-MM-dd HH:mm:ss）
+    finishTime:完成任务的分钟数
+    createAt:完成的时间 （yyyy-MM-dd HH:mm:ss）
     remark:备注
     },
     {……}……
