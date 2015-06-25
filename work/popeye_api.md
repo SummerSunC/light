@@ -123,7 +123,6 @@ method:GET,POST
 ```
 参数 （不传参数返回所有）
 ```
-province(可选):省id
 city（可选）:市id
 ```
 成功：
@@ -172,7 +171,8 @@ token:用户令牌（根据用户名密码加密过后的字符串）//加密方
     silverCoin:银币数量,
     copperCoin:铜币数量，
     totalUseTime:累计使用时间,
-    rankToday:今日排名 这里改为rankToday
+    rankToday:今日排名（名次） 这里改为rankToday
+    rankRateToday:今日排名比例
   }
 }
 ```
