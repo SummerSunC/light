@@ -245,7 +245,7 @@ ticketId:奖券id
     conversionCloseAt:兑换截止日期,
     instruction:说明,
     depict:描述,
-    finishUserCount:成功兑换用户总数
+    exchangeUserCount:成功兑换用户总数
     },
     {……}……
     ]
