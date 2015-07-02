@@ -121,7 +121,42 @@ result = encoder.encode(outputBytes);
     }
 }
 ```
-### 提交更多账户信息
+### 获取用户信息
+```
+url:{apiPath}/user/info
+method:GET
+```
+参数:
+```
+id:用户id  
+```
+失败返回code为451，成功返回code为200
+
+成功：
+```
+{
+    "success": true,
+    "code": 200,
+    "msg": "提交成功",
+    "result": {
+        "id": "1df821599130453ba24d6d0dbf152e14",
+        "headPic": null,
+        "nickName": null,
+        "username": "15096454536",
+        "password": "$shiro1$SHA-256$500000$hEhN5XzZPH0R4JCyCYgaKg==$jSnDFQQ60bFBJen67VYMyB2sRrs+5y73fNEWsnnEdoU=",
+        "schoolId": null,
+        "totalUseTime": 0,
+        "rankToday": 0,
+        "rankRateToday": 0,
+        "goldenCoin": 0,
+        "silverCoin": 0,
+        "copperCoin": 0
+    }
+}
+```
+
+
+### 提交更新更多账户信息
 ```
 url:{apiPath}/user/info
 method:POST
@@ -136,7 +171,7 @@ school:schoolId
 ```
 失败返回code为451，成功返回code为200
 
-### 获得school列表（注册更多这个页面应该需要选择省市好定位学校）
+### 获得school列表
 ```
 url:{apiPath}/schools
 method:GET,POST
@@ -219,10 +254,67 @@ token:用户令牌（根据用户名密码加密过后的字符串）//加密方
   }
 }
 ```
+### 获得收藏的兑换券列表
+```
+url:{apiPath}/tickets/collect/list
+method:GET
+```
+参数：
+```
+userId:用户id
+```
+成功:
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": {
+    [
+    {
+    id:奖券id,
+    name:名称,
+    type:兑换券类型 0：优惠券，1：代金券，2：折扣券,
+    pic:图片url,
+    totalNum:发放总数, //这里改为totalNum
+    shopNames:投放门店名, //这里改为shopNames
+    goldenCoin:所需金币数量,
+    silverCoin:所需银币数量,
+    copperCoin:所需铜币数量，
+    eventCloseAt:活动截止日期
+    conversionCloseAt:兑换截止日期,
+    instruction:说明,
+    depict:描述
+    },
+    {……}……
+    ]
+  }
+}
+```
+### 收藏的兑换券
+```
+url:{apiPath}/tickets/collect
+method:POST
+```
+参数：
+```
+userId:用户id
+```
+成功:
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": 
+  }
+}
+```
+
 ### 获得兑换券列表
 ```
-url:{apiPath}/tickets
-method:GET,POST
+url:{apiPath}/ticket/list
+method:GET
 ```
 参数：
 ```
@@ -259,8 +351,8 @@ userId:用户id
 
 ### 获得兑换券详细信息
 ```
-url:{apiPath}/ticket
-method:GET,POST
+url:{apiPath}/ticket/info
+method:GET
 ```
 参数：
 ```
@@ -295,11 +387,43 @@ ticketId:奖券id
   }
 }
 ```
+### 完成听课任务
+```
+url:{apiPath}/record/complete
+method:POST
+```
+参数：
+```
+userId:用户id
+finishTime:完成时间（分钟）
+```
+成功:
+```
+{ 
+  "success": true, 
+  "code": "200", 
+  "msg": "成功", 
+  "result": {
+    [
+    {
+    id:记录id,
+    goldenCoin:金币数量,
+    silverCoin:银币数量,
+    copperCoin:铜币数量，
+    finishTime:完成任务的分钟数
+    createAt:完成的时间 （yyyy-MM-dd HH:mm:ss）
+    remark:备注
+    },
+    {……}……
+    ]
+  }
+}
+```
 
 ### 获得历史记录
 ```
-url:{apiPath}/history
-method:GET,POST
+url:{apiPath}/record/history
+method:GET
 ```
 参数：
 ```
