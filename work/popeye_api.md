@@ -55,6 +55,10 @@ digest = DigestUtils.md5Hex(new String(digestArray));
 url:{apiPath}/code
 method:GET,POST
 ```
+参数
+```
+phone:手机号码
+```
 如果手机验证失败或已经注册返回失败，code为451
 
 成功
@@ -94,16 +98,32 @@ result = encoder.encode(outputBytes);
 
 成功返回：
 ```
-{ 
-  "success": true, 
-  "code": "200", 
-  "msg": "成功", 
-  "result": {userId}
+{
+"success": true,
+"code": 200,
+"msg": "注册成功",
+"result": {
+    "id": "1df821599130453ba24d6d0dbf152e14",
+    "schoolId": null,
+    "username": "15096454536",
+    "phone": "15096454536",
+    "nickName": null,
+    "email": null,
+    "headPic": null,
+    "sex": null,
+    "totalUseTime": 0,
+    "goldenCoin": 0,
+    "silverCoin": 0,
+    "copperCoin": 0,
+    "updateAt": "2015-07-02 15:14:27",
+    "createAt": "2015-07-02 15:14:27",
+    "status": true
+    }
 }
 ```
 ### 更多账户信息
 ```
-url:{apiPath}/info
+url:{apiPath}/user/info
 method:POST
 ```
 参数:
@@ -128,19 +148,42 @@ city（可选）:市id
 成功：
 ```
 {
-    "success": true,
-    "code": "200",
-    "msg": null,
-    "result": {
-        id:学校id,
-        name:学校名称
-        pic:学校图片url
-        cityId:城市id
-        dictName:区/乡/镇名
-        cityName:市/县名
-        provName:省/市名
-    }
-}
+"success": true,
+"code": 200,
+"msg": "提交成功",
+"result": [
+        {
+            "id": "ed60a3c307e444b788174d3cb940e57f",
+            "name": "西安交通大学",
+            "pic": null,
+            "cityId": 287,
+            "provId": 27,
+            "distId": 3868,
+            "distName": "未央区",
+            "cityName": "西安市",
+            "provName": "陕西省",
+            "address": "128号",
+            "updateAt": "2015-06-29 14:49:40",
+            "createAt": "2015-06-29 13:14:44",
+            "status": true
+        },
+        {
+            "id": "f1edf1a12d8f4d60a316d96ae6024bb9",
+            "name": "上海医科大学",
+            "pic": null,
+            "cityId": 73,
+            "provId": 9,
+            "distId": 720,
+            "distName": "黄浦区",
+            "cityName": "上海市",
+            "provName": "上海市",
+            "address": "128号",
+            "updateAt": "2015-06-29 15:16:09",
+            "createAt": "2015-06-29 14:48:32",
+            "status": true
+        }
+    ]
+}   
 ```
 ### 登录
 ```
