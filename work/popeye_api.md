@@ -121,7 +121,7 @@ result = encoder.encode(outputBytes);
     }
 }
 ```
-### 更多账户信息
+### 提交更多账户信息
 ```
 url:{apiPath}/user/info
 method:POST
