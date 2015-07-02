@@ -1,0 +1,115 @@
+## API 说明
+**此api为第一版v1，后续会改成oauth2方式**
+---
+- API说明 - 所有API采用http方式，请求地址以http://{项目地址}/v1开头(后面以{apiPath}代替)。
+- 所有请求必须带上名为x-auth-token的header作为签名，以验证请求合法性。
+- 所有请求返回数据均为json格式数据。
+- 所有URL路径，参数名均区分大小写 - 编码均为UTF-8。
+```
+{ 
+    "success": true, //是否成功 
+    "code": "200", //code 
+    "msg": "", //详细消息 
+    "result": { //data } 
+} 
+```
+
+## 鉴权说明 
+- 首先通过申请获取appId,appKey,token
+- 根据appKey,token,timestamp(当前系统时间戳转成毫秒数)生成签名，即sign
+- 签名算法：appKey+token用MD5生成16进制摘要md5Hex，再对md5Hex+timestamp用MD5生成16进制签名，然后 按字母顺序对签名排序，最后对排序后的签名再次MD5生成16进制最终签名，下面是一个Java版的示例：
+``` java
+String appId = "3138ea97e3304c029a947c3b4122af79";
+String appKey = "4296ce912e604214a15f3163235fb551"; 
+String appToken = "8aafb36058be4386afabd94cf953c23e"; 
+String sourcre = appKey + appToken; 
+String md5Hex = DigestUtils.md5Hex(sourcre); 
+long time = System.currentTimeMillis(); 
+// System.out.println(time); // 1416447113075 
+String digest = DigestUtils.md5Hex(md5Hex + time);
+// System.out.println(digest); // ba2d43d7a4bda462c1f11416887bb8b8 
+cha r[] digestArray = digest.toCharArray();
+Arrays.sort(digestArray);
+digest = DigestUtils.md5Hex(new String(digestArray));
+// System.out.println(digest); // d28420809770d0bff3c9faf20d8a173c
+//System.out.println(appId + ":" + digest + ":" + time);
+//3138ea97e3304c029a947c3b4122af79:d28420809770d0bff3c9faf20d8a173c:1416447113075
+```
+在具体的请求头中带上鉴权头：x-auth-token：{appId}:{sign}:{timestamp}
+请自行保证服务器时间准确性，如果{timestamp}误差超过5分钟，鉴权不通过
+对于不提供头或鉴权不通过的请求将直接返回401状态码
+对于鉴权通过但无权限访问的数据，返回失败，code为403
+```
+{ 
+    "success": false, 
+    "code": "403", 
+    "msg": "禁止访问", 
+    "result": null 
+} 
+```
+
+## 商户api
+### 登录
+```
+url:{apiPath}/login
+method:POST
+```
+
+参数：
+```
+token:用户令牌（根据用户名密码加密过后的字符串）//加密方式见注册
+```
+如果用户不存在则返回失败，code为451
+
+成功返回：
+```
+{
+  "success": true,
+  "code": 200,
+  "msg": "提交成功",
+  "result": {
+    "id": "012951bbb9d94cadba46e2df67e601c9",
+    "name": "01",
+    "shopId": null,
+    "merchantId": "aab508d0abd943ff8a87e6bc7c33b448",
+    "username": "v1",
+    "updateAt": "2015-06-28 10:17:43",
+    "createAt": "2015-06-28 10:14:15",
+    "status": true
+  }
+}
+```
+
+### 核销sn码
+```
+url:{apiPath}/verify/sncode
+method:POST
+```
+
+参数：
+```
+verifierId:核销员id(商户帐号id)
+sncode:sn码
+```
+
+### 查看核销记录
+```
+url:{apiPath}/verify/list
+method:GET
+```
+参数：
+```
+verifierId(可选):核销员id(商户帐号id)
+startDate（可选）:开始日期
+endDate(可选)：结束日期
+```
+
+### 获取商户下核销员列表
+```
+url:{apiPath}/verifier/list
+method:GET
+```
+参数：
+```
+merchantId:商户id
+```
