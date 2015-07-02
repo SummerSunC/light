@@ -397,28 +397,7 @@ method:POST
 userId:用户id
 finishTime:完成时间（分钟）
 ```
-成功:
-```
-{ 
-  "success": true, 
-  "code": "200", 
-  "msg": "成功", 
-  "result": {
-    [
-    {
-    id:记录id,
-    goldenCoin:金币数量,
-    silverCoin:银币数量,
-    copperCoin:铜币数量，
-    finishTime:完成任务的分钟数
-    createAt:完成的时间 （yyyy-MM-dd HH:mm:ss）
-    remark:备注
-    },
-    {……}……
-    ]
-  }
-}
-```
+
 
 ### 获得历史记录
 ```
