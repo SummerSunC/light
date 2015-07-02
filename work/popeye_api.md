@@ -1,4 +1,4 @@
-# Popeye API
+# Popeye 用户API
 ## API 说明
 **此api为第一版v1，后续会改成oauth2方式**
 ---
@@ -49,7 +49,7 @@ digest = DigestUtils.md5Hex(new String(digestArray));
 } 
 ```
 
-## API
+## 用户API
 ### 获取验证码
 ```
 url:{apiPath}/code
@@ -441,6 +441,10 @@ userId:用户id
     "result": "ok"
 }
 ```
+
+
+
+
 
 
 
