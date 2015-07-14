@@ -46,8 +46,10 @@ vmware 11 序列号：1F04Z-6D111-7Z029-AV0Q4-3AEH8
 
 ### Mac
 alfred 搜索工具
+
 dash 文档工具
-brew 安装工具
+
+[brew 安装工具](http://brew.sh/index_zh-cn.html)
 
 
 
