@@ -44,6 +44,11 @@ vmware 11 序列号：1F04Z-6D111-7Z029-AV0Q4-3AEH8
 
 [使用EasyBCD安装双系统](http://jingyan.baidu.com/article/e4d08ffdace06e0fd2f60d39.html)
 
+### Mac
+alfred 搜索工具
+dash 文档工具
+brew 安装工具
+
 
 
 
