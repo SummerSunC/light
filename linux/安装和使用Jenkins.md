@@ -37,6 +37,7 @@ pscp -v -P {port} -pw %PWD_TEST% local/path/to/{application}.war user@host:/path
 plink -v -P {port} -pw %PWD_TEST% {user}@{host} /path/to/scripts/{script}.sh {application}.war {profile}
 ```
 
+{script}.sh
 ```
 #!/bin/bash
 
