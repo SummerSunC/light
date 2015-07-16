@@ -25,7 +25,9 @@ JENKINS_HOME="/var/lib/jenkins"
 
 ## 使用
 ![](../extra/img/jenkins_0.png)
-
+![](../extra/img/jenkins_1.png)
+![](../extra/img/jenkins_2.png)
+![](../extra/img/jenkins_3.png)
 ### 设置
 
 ```
