@@ -22,3 +22,20 @@ jenkins 实际上是在内部嵌入了jetty容器，通过jar 的方式直接发
 启动脚本为/etc/init.d/jenkins
 
 JENKINS_HOME="/var/lib/jenkins"
+
+## 使用
+
+### 设置
+
+```
+#!/bin/bash
+
+export REPOSITORY=/home/$USER/repository
+export LOG_FILE=/home/$USER/logs/`date +"%F"`.log
+
+if [[ -f $REPOSITORY/$1 ]]
+then
+  cd /home/$USER/scripts
+  sh .boot $REPOSITORY $1 $2 >>$LOG_FILE 2>&1
+fi
+```
