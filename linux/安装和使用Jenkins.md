@@ -24,7 +24,7 @@ jenkins 实际上是在内部嵌入了jetty容器，通过jar 的方式直接发
 JENKINS_HOME="/var/lib/jenkins"
 
 ## 使用
-![](/extra/img/jenkins_0.png)![![![](jenkins_3.png)](jenkins_2.png)](jenkins_1.png)
+![](../extra/img/jenkins_0.png)![![![](jenkins_3.png)](jenkins_2.png)](jenkins_1.png)
 ### 设置
 
 ```
