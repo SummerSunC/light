@@ -14,14 +14,18 @@ http://pypi.mirrors.ustc.edu.cn/  中国科学技术大学
 pip install django -i http://pypi.mirrors.ustc.edu.cn/simple
 ```
 ## 配置文件
+要配制成默认的话，需要**创建或修改**配置文件（linux的文件在~/.pip/pip.conf，windows在%HOMEPATH%\pip\pip.ini），修改内容为：
 ```
-要配制成默认的话，需要创建或修改配置文件（linux的文件在~/.pip/pip.conf，windows在%HOMEPATH%\pip\pip.ini），修改内容为：
-code:
 [global]
+respect-virtualenv = true
 index-url = http://pypi.douban.com/simple
+
+[install]
+timeout = 30
 find-links =
     http://pypi.mirrors.ustc.edu.cn
     http://pypi.douban.com
     http://pypi.hustunique.com
     http://pypi.sdutlinux.org
+
 ```
