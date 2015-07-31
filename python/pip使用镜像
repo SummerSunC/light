@@ -1,0 +1,15 @@
+# pip使用镜像加速
+
+## 镜像资源
+```
+http://pypi.douban.com/  豆瓣
+http://pypi.hustunique.com/  华中理工大学
+http://pypi.sdutlinux.org/  山东理工大学
+http://pypi.mirrors.ustc.edu.cn/  中国科学技术大学
+```
+
+## 手动指定镜像地址
+如果想手动指定源，可以在pip后面跟-i 来指定源，比如用豆瓣的源来安装web.py框架：
+```
+pip install web.py -i http://pypi.douban.com/simple
+```
