@@ -23,6 +23,12 @@ jenkins 实际上是在内部嵌入了jetty容器，通过jar 的方式直接发
 
 JENKINS_HOME="/var/lib/jenkins"
 
+/usr/local/bin/start-stop-daemon --start --quiet --background --make-pidfile --pidfile jenkins --chuid jenkins --exec /opt/java/jdk1.7.0_79 -- -jar /opt/jenkins/src/jenkins.war
+
+## 安装
+官方的初始化脚本，使用到了start-stop-daemon，centos需要自己安装
+[安装start-stop-daemon](http://blog.creke.net/776.html)
+
 ## 使用
 ![](../extra/img/jenkins_0.png)
 ![](../extra/img/jenkins_1.png)

@@ -25,6 +25,8 @@
 
 [yum 安装](http://blog.csdn.net/tianlesoftware/article/details/5381522)
 
+[linux创建守护进程](http://guoyunsky.iteye.com/blog/1869988)
+
 ## 资源
 [阿里巴巴分布式同步系统](http://github.com/alibaba/otter)
 
