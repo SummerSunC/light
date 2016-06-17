@@ -15,3 +15,9 @@ sudo chkconfig nexus on
 
 sudo service nexus start
 ```
+
+## 重启网卡
+```
+ifdown {网卡名}
+ifup {网卡名}
+```
